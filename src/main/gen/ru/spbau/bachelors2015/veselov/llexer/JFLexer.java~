@@ -546,39 +546,39 @@ class JFLexer {
             }
           case 13: break;
           case 3: 
-            { return new IfKeyWord(yyline, yycolumn, yytext().length);
+            { return new IfKeyWord(yyline, yycolumn, yytext().length());
             }
           case 14: break;
           case 4: 
-            { return new DoKeyWord(yyline, yycolumn, yytext().length);
+            { return new DoKeyWord(yyline, yycolumn, yytext().length());
             }
           case 15: break;
           case 5: 
-            { return new EndKeyWord(yyline, yycolumn, yytext().length);
+            { return new EndKeyWord(yyline, yycolumn, yytext().length());
             }
           case 16: break;
           case 6: 
-            { return new ThenKeyWord(yyline, yycolumn, yytext().length);
+            { return new ThenKeyWord(yyline, yycolumn, yytext().length());
             }
           case 17: break;
           case 7: 
-            { return new ElseKeyWord(yyline, yycolumn, yytext().length);
+            { return new ElseKeyWord(yyline, yycolumn, yytext().length());
             }
           case 18: break;
           case 8: 
-            { return new ReadKeyWord(yyline, yycolumn, yytext().length);
+            { return new ReadKeyWord(yyline, yycolumn, yytext().length());
             }
           case 19: break;
           case 9: 
-            { return new WhileKeyWord(yyline, yycolumn, yytext().length);
+            { return new WhileKeyWord(yyline, yycolumn, yytext().length());
             }
           case 20: break;
           case 10: 
-            { return new WriteKeyWord(yyline, yycolumn, yytext().length);
+            { return new WriteKeyWord(yyline, yycolumn, yytext().length());
             }
           case 21: break;
           case 11: 
-            { return new BeginKeyWord(yyline, yycolumn, yytext().length);
+            { return new BeginKeyWord(yyline, yycolumn, yytext().length());
             }
           case 22: break;
           default:

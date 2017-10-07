@@ -2,25 +2,25 @@ package ru.spbau.bachelors2015.veselov.llexer.tokens;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Commentary extends Token {
-    private final @NotNull String string;
+public class Identifier extends Token {
+    private final @NotNull String name;
 
-    public Commentary(final int line,
+    public Identifier(final int line,
                       final int vpos,
                       final int length,
-                      final @NotNull String string) {
+                      final @NotNull String name) {
         super(line, vpos, length);
 
-        this.string = string;
+        this.name = name;
     }
 
     @Override
     public @NotNull String name() {
-        return "Commentary";
+        return "Identifier";
     }
 
     @Override
     protected @NotNull String feature() {
-        return string;
+        return name;
     }
 }

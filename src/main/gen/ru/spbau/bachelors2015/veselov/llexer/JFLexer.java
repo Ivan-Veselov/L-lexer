@@ -51,10 +51,10 @@ class JFLexer {
 
   /* The ZZ_CMAP_A table has 384 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\2\1\1\1\0\1\2\1\1\22\0\1\2\16\0\1\3\21\0\1\20\1\21\1\0\1\15\1\10\1"+
-    "\5\1\22\1\7\1\4\2\0\1\12\1\0\1\11\1\16\2\0\1\17\1\13\1\6\2\0\1\14\11\0\1\20"+
-    "\1\21\1\0\1\15\1\10\1\5\1\22\1\7\1\4\2\0\1\12\1\0\1\11\1\16\2\0\1\17\1\13"+
-    "\1\6\2\0\1\14\270\0\2\4\115\0\1\13");
+    "\11\0\1\2\1\1\1\0\1\2\1\1\22\0\1\2\16\0\1\4\21\0\1\35\1\37\1\0\1\27\1\15\1"+
+    "\7\1\41\1\13\1\5\2\0\1\21\1\0\1\17\1\31\2\0\1\33\1\23\1\11\2\0\1\25\7\0\1"+
+    "\3\1\0\1\36\1\40\1\3\1\30\1\16\1\10\1\42\1\14\1\6\2\3\1\22\1\3\1\20\1\32\2"+
+    "\3\1\34\1\24\1\12\2\3\1\26\3\3\265\0\2\5\115\0\1\23");
 
   /** 
    * Translates DFA states to action switch labels.
@@ -62,12 +62,16 @@ class JFLexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\2\1\10\0\1\2\1\3\5\0\1\4\3\0\1\5"+
-    "\5\0\1\6\1\7\2\0\1\10\1\0\1\11\1\12"+
-    "\1\13";
+    "\2\1\1\2\2\0\1\2\1\0\1\2\1\0\1\2"+
+    "\1\0\1\2\1\0\1\2\1\0\1\2\1\0\1\2"+
+    "\1\3\2\4\1\0\1\2\2\0\2\2\2\0\2\2"+
+    "\2\5\1\0\1\2\1\0\1\2\1\0\1\2\1\6"+
+    "\1\0\1\6\1\2\2\0\2\2\1\0\1\2\1\0"+
+    "\1\2\2\7\2\10\2\0\2\2\2\11\1\0\1\2"+
+    "\1\12\1\13\1\12\1\13\2\14";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[36];
+    int [] result = new int[69];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -92,14 +96,18 @@ class JFLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\23\0\46\0\71\0\114\0\137\0\162\0\205"+
-    "\0\230\0\253\0\276\0\321\0\344\0\367\0\u010a\0\u011d"+
-    "\0\u0130\0\321\0\u0143\0\u0156\0\u0169\0\321\0\u017c\0\u018f"+
-    "\0\u01a2\0\u01b5\0\u01c8\0\321\0\321\0\u01db\0\u01ee\0\321"+
-    "\0\u0201\0\321\0\321\0\321";
+    "\0\0\0\43\0\106\0\151\0\214\0\257\0\322\0\365"+
+    "\0\u0118\0\u013b\0\u015e\0\u0181\0\u01a4\0\u01c7\0\u01ea\0\u020d"+
+    "\0\u0230\0\u0253\0\u0276\0\u0299\0\106\0\u02bc\0\u02df\0\u0302"+
+    "\0\u0325\0\u0348\0\u036b\0\u038e\0\u03b1\0\u03d4\0\u03f7\0\u0299"+
+    "\0\106\0\u041a\0\u043d\0\u0460\0\u0483\0\u04a6\0\u04c9\0\u0299"+
+    "\0\u04ec\0\106\0\u050f\0\u0532\0\u0555\0\u0578\0\u059b\0\u05be"+
+    "\0\u05e1\0\u0604\0\u0627\0\u0299\0\106\0\u0299\0\106\0\u064a"+
+    "\0\u066d\0\u0690\0\u06b3\0\u0299\0\106\0\u06d6\0\u06f9\0\u0299"+
+    "\0\u0299\0\106\0\106\0\u0299\0\106";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[36];
+    int [] result = new int[69];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -122,19 +130,38 @@ class JFLexer {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\0\2\2\1\3\1\4\1\0\1\5\1\0\1\6"+
-    "\3\0\1\7\1\10\1\0\1\11\1\0\1\12\2\0"+
-    "\2\2\23\0\1\13\24\0\1\14\24\0\1\15\24\0"+
-    "\1\16\1\17\17\0\1\20\7\0\1\21\21\0\1\22"+
-    "\14\0\1\23\22\0\1\24\12\0\1\13\1\0\21\13"+
-    "\33\0\1\25\27\0\1\26\20\0\1\27\13\0\1\30"+
-    "\22\0\1\31\36\0\1\32\24\0\1\33\11\0\1\34"+
-    "\21\0\1\35\24\0\1\36\16\0\1\37\31\0\1\40"+
-    "\11\0\1\41\26\0\1\42\22\0\1\43\23\0\1\44"+
-    "\11\0";
+    "\1\0\2\2\1\3\1\4\1\5\1\6\1\0\1\3"+
+    "\1\7\1\10\1\0\1\3\1\11\1\12\1\0\1\3"+
+    "\1\0\1\3\1\0\1\3\1\13\1\14\1\15\1\16"+
+    "\1\0\1\3\1\17\1\20\1\0\1\3\1\21\1\22"+
+    "\1\0\1\3\1\0\2\2\40\0\1\3\2\0\40\3"+
+    "\4\0\1\23\45\0\2\24\32\0\1\3\2\0\4\3"+
+    "\2\25\32\3\13\0\2\26\26\0\1\3\2\0\10\3"+
+    "\2\27\26\3\17\0\2\30\2\31\20\0\1\3\2\0"+
+    "\14\3\2\32\2\33\20\3\13\0\2\34\16\0\2\35"+
+    "\6\0\1\3\2\0\10\3\2\36\16\3\2\37\6\3"+
+    "\31\0\2\40\10\0\1\3\2\0\26\3\2\41\10\3"+
+    "\15\0\2\42\24\0\1\3\2\0\12\3\2\43\24\3"+
+    "\15\0\2\44\24\0\1\3\2\0\12\3\2\45\24\3"+
+    "\1\23\1\0\41\23\60\0\2\46\24\0\1\3\2\0"+
+    "\12\3\2\47\24\3\27\0\2\50\35\0\2\51\16\0"+
+    "\1\3\2\0\24\3\2\52\13\3\2\0\20\3\2\53"+
+    "\16\3\5\0\2\54\41\0\2\55\34\0\1\3\2\0"+
+    "\2\3\2\56\35\3\2\0\2\3\2\57\34\3\35\0"+
+    "\2\60\4\0\1\3\2\0\32\3\2\61\4\3\41\0"+
+    "\2\62\1\3\2\0\36\3\2\63\17\0\2\64\22\0"+
+    "\1\3\2\0\14\3\2\65\22\3\15\0\2\66\24\0"+
+    "\1\3\2\0\12\3\2\67\24\3\21\0\2\70\31\0"+
+    "\2\71\30\0\1\3\2\0\16\3\2\72\21\3\2\0"+
+    "\6\3\2\73\30\3\27\0\2\74\12\0\1\3\2\0"+
+    "\24\3\2\75\12\3\5\0\2\76\34\0\1\3\2\0"+
+    "\2\3\2\77\34\3\15\0\2\100\41\0\2\101\24\0"+
+    "\1\3\2\0\12\3\2\102\25\3\2\0\12\3\2\103"+
+    "\24\3\17\0\2\104\22\0\1\3\2\0\14\3\2\105"+
+    "\22\3";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[532];
+    int [] result = new int[1820];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -172,11 +199,16 @@ class JFLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\2\1\10\0\1\1\1\11\5\0\1\11\3\0\1\11"+
-    "\5\0\2\11\2\0\1\11\1\0\3\11";
+    "\3\1\2\0\1\1\1\0\1\1\1\0\1\1\1\0"+
+    "\1\1\1\0\1\1\1\0\1\1\1\0\2\1\1\11"+
+    "\1\1\1\0\1\1\2\0\2\1\2\0\2\1\1\11"+
+    "\1\1\1\0\1\1\1\0\1\1\1\0\1\1\1\11"+
+    "\1\0\2\1\2\0\2\1\1\0\1\1\1\0\1\1"+
+    "\1\11\1\1\1\11\1\1\2\0\2\1\1\11\1\1"+
+    "\1\0\1\1\2\11\2\1\1\11\1\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[36];
+    int [] result = new int[69];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -540,47 +572,51 @@ class JFLexer {
           case 1: 
             { 
             }
-          case 12: break;
-          case 2: 
-            { return new Commentary(yyline, yycolumn, yytext().length(), yytext().toString());
-            }
           case 13: break;
-          case 3: 
-            { return new IfKeyWord(yyline, yycolumn, yytext().length());
+          case 2: 
+            { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString());
             }
           case 14: break;
-          case 4: 
-            { return new DoKeyWord(yyline, yycolumn, yytext().length());
+          case 3: 
+            { return new Commentary(yyline, yycolumn, yytext().length(), yytext().toString());
             }
           case 15: break;
-          case 5: 
-            { return new EndKeyWord(yyline, yycolumn, yytext().length());
+          case 4: 
+            { return new IfKeyWord(yyline, yycolumn, yytext().length());
             }
           case 16: break;
-          case 6: 
-            { return new ThenKeyWord(yyline, yycolumn, yytext().length());
+          case 5: 
+            { return new DoKeyWord(yyline, yycolumn, yytext().length());
             }
           case 17: break;
-          case 7: 
-            { return new ElseKeyWord(yyline, yycolumn, yytext().length());
+          case 6: 
+            { return new EndKeyWord(yyline, yycolumn, yytext().length());
             }
           case 18: break;
-          case 8: 
-            { return new ReadKeyWord(yyline, yycolumn, yytext().length());
+          case 7: 
+            { return new ThenKeyWord(yyline, yycolumn, yytext().length());
             }
           case 19: break;
-          case 9: 
-            { return new WhileKeyWord(yyline, yycolumn, yytext().length());
+          case 8: 
+            { return new ElseKeyWord(yyline, yycolumn, yytext().length());
             }
           case 20: break;
-          case 10: 
-            { return new WriteKeyWord(yyline, yycolumn, yytext().length());
+          case 9: 
+            { return new ReadKeyWord(yyline, yycolumn, yytext().length());
             }
           case 21: break;
-          case 11: 
-            { return new BeginKeyWord(yyline, yycolumn, yytext().length());
+          case 10: 
+            { return new WhileKeyWord(yyline, yycolumn, yytext().length());
             }
           case 22: break;
+          case 11: 
+            { return new WriteKeyWord(yyline, yycolumn, yytext().length());
+            }
+          case 23: break;
+          case 12: 
+            { return new BeginKeyWord(yyline, yycolumn, yytext().length());
+            }
+          case 24: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }
