@@ -56,4 +56,8 @@ begin { return new BeginKeyWord(yyline, yycolumn, yytext().length()); }
 
 end { return new EndKeyWord(yyline, yycolumn, yytext().length()); }
 
+true { return new TrueKeyWord(yyline, yycolumn, yytext().length()); }
+
+false { return new FalseKeyWord(yyline, yycolumn, yytext().length()); }
+
 {Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
