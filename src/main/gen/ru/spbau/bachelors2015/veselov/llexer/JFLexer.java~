@@ -523,7 +523,7 @@ class JFLexer {
             }
           case 3: break;
           case 2: 
-            { return new Commentary(yyline, yycolumn, yytext().length(), yytext().toString());
+            { return new Commentary(yyline, yycolumn, yytext().length(), yytext());
             }
           case 4: break;
           default:

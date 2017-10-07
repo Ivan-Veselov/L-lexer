@@ -1,6 +1,7 @@
 package ru.spbau.bachelors2015.veselov.llexer;
 
 import org.jetbrains.annotations.NotNull;
+import ru.spbau.bachelors2015.veselov.llexer.tokens.Token;
 
 import java.io.IOException;
 import java.util.Iterator;
