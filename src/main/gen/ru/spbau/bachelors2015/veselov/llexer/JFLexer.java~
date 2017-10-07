@@ -4,8 +4,7 @@ package ru.spbau.bachelors2015.veselov.llexer;
 
 import ru.spbau.bachelors2015.veselov.llexer.tokens.*;
 import ru.spbau.bachelors2015.veselov.llexer.tokens.keywords.*;
-
-import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.GRT;
+import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 
 
 /**
@@ -288,6 +287,10 @@ class JFLexer {
     private int yyline = 0;
 
     private int yycolumn = 0;
+
+    private Operator operator(final OperatorType type) {
+        return new Operator(yyline, yycolumn, yytext().length(), type);
+    }
 
 
   /**
@@ -599,31 +602,31 @@ class JFLexer {
             }
           case 29: break;
           case 3: 
-            { return new Operator(yyline, yycolumn, yytext().length(), DIV)
+            { return operator(DIV);
             }
           case 30: break;
           case 4: 
-            { return new Operator(yyline, yycolumn, yytext().length(), PLUS)
+            { return operator(PLUS);
             }
           case 31: break;
           case 5: 
-            { return new Operator(yyline, yycolumn, yytext().length(), MINUS)
+            { return operator(MINUS);
             }
           case 32: break;
           case 6: 
-            { return new Operator(yyline, yycolumn, yytext().length(), MULT)
+            { return operator(MULT);
             }
           case 33: break;
           case 7: 
-            { return new Operator(yyline, yycolumn, yytext().length(), REM)
+            { return operator(REM);
             }
           case 34: break;
           case 8: 
-            { return new Operator(yyline, yycolumn, yytext().length(), GRT)
+            { return operator(GRT);
             }
           case 35: break;
           case 9: 
-            { return new Operator(yyline, yycolumn, yytext().length(), LESS)
+            { return operator(LESS);
             }
           case 36: break;
           case 10: 
@@ -639,27 +642,27 @@ class JFLexer {
             }
           case 39: break;
           case 13: 
-            { return new Operator(yyline, yycolumn, yytext().length(), EQ)
+            { return operator(EQ);
             }
           case 40: break;
           case 14: 
-            { return new Operator(yyline, yycolumn, yytext().length(), NEQ)
+            { return operator(NEQ);
             }
           case 41: break;
           case 15: 
-            { return new Operator(yyline, yycolumn, yytext().length(), GRT_EQ)
+            { return operator(GRT_EQ);
             }
           case 42: break;
           case 16: 
-            { return new Operator(yyline, yycolumn, yytext().length(), LESS_EQ)
+            { return operator(LESS_EQ);
             }
           case 43: break;
           case 17: 
-            { return new Operator(yyline, yycolumn, yytext().length(), AND)
+            { return operator(AND);
             }
           case 44: break;
           case 18: 
-            { return new Operator(yyline, yycolumn, yytext().length(), OR)
+            { return operator(OR);
             }
           case 45: break;
           case 19: 

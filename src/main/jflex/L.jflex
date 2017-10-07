@@ -65,8 +65,6 @@ true { return new TrueKeyWord(yyline, yycolumn, yytext().length()); }
 
 false { return new FalseKeyWord(yyline, yycolumn, yytext().length()); }
 
-{Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
-
 "+" { return operator(PLUS); }
 
 "-" { return operator(MINUS); }
@@ -92,3 +90,11 @@ false { return new FalseKeyWord(yyline, yycolumn, yytext().length()); }
 "&&" { return operator(AND); }
 
 "||" { return operator(OR); }
+
+"(" { return new LeftParen(yyline, yycolumn, yytext().length()); }
+
+")" { return new RightParen(yyline, yycolumn, yytext().length()); }
+
+";" { return new Semicolon(yyline, yycolumn, yytext().length()); }
+
+{Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
