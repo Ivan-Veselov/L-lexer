@@ -2,6 +2,7 @@ package ru.spbau.bachelors2015.veselov.llexer;
 
 import ru.spbau.bachelors2015.veselov.llexer.tokens.*;
 import ru.spbau.bachelors2015.veselov.llexer.tokens.keywords.*;
+import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 
 %%
 
@@ -19,6 +20,10 @@ import ru.spbau.bachelors2015.veselov.llexer.tokens.keywords.*;
     private int yyline = 0;
 
     private int yycolumn = 0;
+
+    private Operator operator(final OperatorType type) {
+        return new Operator(yyline, yycolumn, yytext().length(), type);
+    }
 %}
 
 EOL = \x0D | \x0A | \x0D\x0A // CR | LF | CR LF
@@ -61,3 +66,29 @@ true { return new TrueKeyWord(yyline, yycolumn, yytext().length()); }
 false { return new FalseKeyWord(yyline, yycolumn, yytext().length()); }
 
 {Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
+
+"+" { return operator(PLUS); }
+
+"-" { return operator(MINUS); }
+
+"*" { return operator(MULT); }
+
+"/" { return operator(DIV); }
+
+"%" { return operator(REM); }
+
+"==" { return operator(EQ); }
+
+"!=" { return operator(NEQ); }
+
+">" { return operator(GRT); }
+
+">=" { return operator(GRT_EQ); }
+
+"<" { return operator(LESS); }
+
+"<=" { return operator(LESS_EQ); }
+
+"&&" { return operator(AND); }
+
+"||" { return operator(OR); }
