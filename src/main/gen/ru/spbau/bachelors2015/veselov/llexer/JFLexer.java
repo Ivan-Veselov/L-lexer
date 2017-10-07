@@ -3,7 +3,7 @@
 package ru.spbau.bachelors2015.veselov.llexer;
 
 import ru.spbau.bachelors2015.veselov.llexer.tokens.*;
-import ru.spbau.bachelors2015.veselov.llexer.tokens.keywords.*;
+import static ru.spbau.bachelors2015.veselov.llexer.tokens.KeyWordType.*;
 import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 
 
@@ -288,6 +288,10 @@ class JFLexer {
     private int yyline = 0;
 
     private int yycolumn = 0;
+
+    private KeyWord keyWord(final KeyWordType type) {
+        return new KeyWord(yyline, yycolumn, yytext().length(), type);
+    }
 
     private Operator operator(final OperatorType type) {
         return new Operator(yyline, yycolumn, yytext().length(), type);
@@ -647,11 +651,11 @@ class JFLexer {
             }
           case 43: break;
           case 14: 
-            { return new IfKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(IF);
             }
           case 44: break;
           case 15: 
-            { return new DoKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(DO);
             }
           case 45: break;
           case 16: 
@@ -679,39 +683,39 @@ class JFLexer {
             }
           case 51: break;
           case 22: 
-            { return new EndKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(END);
             }
           case 52: break;
           case 23: 
-            { return new ThenKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(THEN);
             }
           case 53: break;
           case 24: 
-            { return new TrueKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(TRUE);
             }
           case 54: break;
           case 25: 
-            { return new ElseKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(ELSE);
             }
           case 55: break;
           case 26: 
-            { return new ReadKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(READ);
             }
           case 56: break;
           case 27: 
-            { return new FalseKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(FALSE);
             }
           case 57: break;
           case 28: 
-            { return new WhileKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(WHILE);
             }
           case 58: break;
           case 29: 
-            { return new WriteKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(WRITE);
             }
           case 59: break;
           case 30: 
-            { return new BeginKeyWord(yyline, yycolumn, yytext().length());
+            { return keyWord(BEGIN);
             }
           case 60: break;
           default:

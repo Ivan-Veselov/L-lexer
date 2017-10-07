@@ -1,7 +1,7 @@
 package ru.spbau.bachelors2015.veselov.llexer;
 
 import ru.spbau.bachelors2015.veselov.llexer.tokens.*;
-import ru.spbau.bachelors2015.veselov.llexer.tokens.keywords.*;
+import static ru.spbau.bachelors2015.veselov.llexer.tokens.KeyWordType.*;
 import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 
 %%
@@ -20,6 +20,10 @@ import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
     private int yyline = 0;
 
     private int yycolumn = 0;
+
+    private KeyWord keyWord(final KeyWordType type) {
+        return new KeyWord(yyline, yycolumn, yytext().length(), type);
+    }
 
     private Operator operator(final OperatorType type) {
         return new Operator(yyline, yycolumn, yytext().length(), type);
@@ -43,27 +47,27 @@ Identifier = ({Letter} | _) ({NotWhitespace})*
 
 {Commentary} { return new Commentary(yyline, yycolumn, yytext().length(), yytext().toString()); }
 
-if { return new IfKeyWord(yyline, yycolumn, yytext().length()); }
+if { return keyWord(IF); }
 
-then { return new ThenKeyWord(yyline, yycolumn, yytext().length()); }
+then { return keyWord(THEN); }
 
-else { return new ElseKeyWord(yyline, yycolumn, yytext().length()); }
+else { return keyWord(ELSE); }
 
-while { return new WhileKeyWord(yyline, yycolumn, yytext().length()); }
+while { return keyWord(WHILE); }
 
-do { return new DoKeyWord(yyline, yycolumn, yytext().length()); }
+do { return keyWord(DO); }
 
-read { return new ReadKeyWord(yyline, yycolumn, yytext().length()); }
+read { return keyWord(READ); }
 
-write { return new WriteKeyWord(yyline, yycolumn, yytext().length()); }
+write { return keyWord(WRITE); }
 
-begin { return new BeginKeyWord(yyline, yycolumn, yytext().length()); }
+begin { return keyWord(BEGIN); }
 
-end { return new EndKeyWord(yyline, yycolumn, yytext().length()); }
+end { return keyWord(END); }
 
-true { return new TrueKeyWord(yyline, yycolumn, yytext().length()); }
+true { return keyWord(TRUE); }
 
-false { return new FalseKeyWord(yyline, yycolumn, yytext().length()); }
+false { return keyWord(FALSE); }
 
 "+" { return operator(PLUS); }
 
