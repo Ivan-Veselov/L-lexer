@@ -21,8 +21,6 @@ public class Main {
             return;
         }
 
-        while (tokens.hasNext()) {
-            System.out.println(tokens.next());
-        }
+        System.out.println(tokens);
     }
 }

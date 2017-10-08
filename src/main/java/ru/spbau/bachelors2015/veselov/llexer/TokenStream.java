@@ -49,4 +49,14 @@ public class TokenStream implements Iterator<Token> {
         nextToken = null;
         return token;
     }
+
+    @Override
+    public @NotNull String toString() {
+        StringBuilder builder = new StringBuilder();
+        while (hasNext()) {
+            builder.append(next()).append('\n');
+        }
+
+        return builder.toString();
+    }
 }
