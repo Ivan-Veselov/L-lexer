@@ -33,13 +33,41 @@ import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 EOL = \x0D | \x0A | \x0D\x0A // CR | LF | CR LF
 NotEOL = [^\x0D\x0A]
 Whitespace = {EOL} | \x20 | \x09 | \x0C // SP | HT | FF
-NotWhitespace = [^\x0D\x0A\x20\x09\x0C]
 
 Letter = [a-z]
+Digit = [0-9]
+NonZeroDigit = [1-9]
+Underscore = _
+Underscores = {Underscore}+
+
+DigitOrUnderscore = {Digit} | {Underscore}
+DigitsAndUnderscores = {DigitOrUnderscore}+
+Digits = {Digit} | {Digit} {DigitsAndUnderscores}? {Digit}
 
 Commentary = \/\/{NotEOL}*
 
-Identifier = ({Letter} | _) ({NotWhitespace})*
+Identifier = ({Letter} | {Underscore}) ({Letter} | {Digit} | {Underscore})*
+
+// Decimal integer literal
+
+DecimalIntegerLiteral =
+    "0" |
+    {NonZeroDigit} {Digits}? |
+    {NonZeroDigit} {Underscores} {Digits}
+
+// Decimal floating point literal
+
+ExponentIndicator = e | E
+
+Sign = "+" | "-"
+SignedInteger = {Sign}? {Digits}
+
+ExponentPart = {ExponentIndicator} {SignedInteger}
+
+DecimalFloatingPointLiteral =
+    {Digits} "." {Digits}? {ExponentPart}? |
+    "." {Digits} {ExponentPart}? |
+    {Digits} {ExponentPart}
 
 %%
 
@@ -100,5 +128,19 @@ false { return keyWord(FALSE); }
 ")" { return new RightParen(yyline, yycolumn, yytext().length()); }
 
 ";" { return new Semicolon(yyline, yycolumn, yytext().length()); }
+
+{DecimalIntegerLiteral} {
+    return new FloatingPointLiteral(yyline,
+                                    yycolumn,
+                                    yytext().length(),
+                                    Long.parseLong(yytext().toString()));
+}
+
+{DecimalFloatingPointLiteral} {
+    return new FloatingPointLiteral(yyline,
+                                    yycolumn,
+                                    yytext().length(),
+                                    Double.parseDouble(yytext().toString()));
+}
 
 {Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
