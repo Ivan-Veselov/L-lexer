@@ -1,0 +1,6 @@
+KeyWord[0:0-3](READ)
+Identifier[0:5](a)
+KeyWord[1:0-3](READ)
+Identifier[1:5](b)
+KeyWord[2:0-4](WRITE)
+Identifier[2:6](a)

@@ -1,0 +1,6 @@
+Identifier[0:0](a)
+Operator[0:2-3](AND)
+Identifier[0:5](b)
+Identifier[1:0](b)
+Operator[1:2-3](OR)
+Identifier[1:5](a)

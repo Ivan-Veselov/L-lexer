@@ -9,7 +9,6 @@ import static ru.spbau.bachelors2015.veselov.llexer.tokens.OperatorType.*;
 %class JFLexer
 
 %unicode
-%ignorecase
 
 %line
 %column
@@ -133,14 +132,16 @@ false { return keyWord(FALSE); }
     return new FloatingPointLiteral(yyline,
                                     yycolumn,
                                     yytext().length(),
-                                    Long.parseLong(yytext().toString()));
+                                    Long.parseLong(yytext().toString().replace("_", "")));
 }
 
 {DecimalFloatingPointLiteral} {
     return new FloatingPointLiteral(yyline,
                                     yycolumn,
                                     yytext().length(),
-                                    Double.parseDouble(yytext().toString()));
+                                    Double.parseDouble(yytext().toString().replace("_", "")));
 }
 
 {Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
+
+[^] { throw new UnableToTokenizeException(); }

@@ -1,0 +1,5 @@
+KeyWord[0:0-3](READ)
+LeftParen[0:4]
+Identifier[0:5](a)
+RightParen[0:6]
+Semicolon[0:7]

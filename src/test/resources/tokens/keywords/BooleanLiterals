@@ -1,0 +1,7 @@
+KeyWord[0:0-1](IF)
+KeyWord[0:3-6](TRUE)
+KeyWord[0:8-11](THEN)
+KeyWord[0:13-14](DO)
+KeyWord[0:16-20](BEGIN)
+KeyWord[1:4-8](FALSE)
+KeyWord[2:0-2](END)

@@ -1,0 +1,9 @@
+iff
+thenab
+elseif
+whilenot
+done
+readit
+writethendoit
+beginning
+ending

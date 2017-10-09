@@ -21,6 +21,6 @@ public class Main {
             return;
         }
 
-        System.out.println(tokens);
+        System.out.println(TokenUtils.getInstance().toString(tokens));
     }
 }

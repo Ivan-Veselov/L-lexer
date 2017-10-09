@@ -1,0 +1,6 @@
+KeyWord[0:0-1](DO)
+KeyWord[0:3-7](BEGIN)
+Identifier[1:4](a)
+KeyWord[2:0-2](END)
+KeyWord[3:0-4](WHILE)
+Identifier[3:6](b)
