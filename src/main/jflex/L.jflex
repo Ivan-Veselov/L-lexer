@@ -128,6 +128,8 @@ false { return keyWord(FALSE); }
 
 ";" { return new Semicolon(yyline, yycolumn, yytext().length()); }
 
+":=" { return new Assignment(yyline, yycolumn, yytext().length()); }
+
 {DecimalIntegerLiteral} {
     return new FloatingPointLiteral(yyline,
                                     yycolumn,

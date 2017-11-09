@@ -603,7 +603,7 @@ class JFLexer {
             { return new FloatingPointLiteral(yyline,
                                     yycolumn,
                                     yytext().length(),
-                                    Long.parseLong(yytext().toString()));
+                                    Long.parseLong(yytext().toString().replace("_", "")));
             }
           case 37: break;
           case 5: 
@@ -650,7 +650,7 @@ class JFLexer {
             { return new FloatingPointLiteral(yyline,
                                     yycolumn,
                                     yytext().length(),
-                                    Double.parseDouble(yytext().toString()));
+                                    Double.parseDouble(yytext().toString().replace("_", "")));
             }
           case 48: break;
           case 16: 

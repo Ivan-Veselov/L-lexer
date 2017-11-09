@@ -3,3 +3,6 @@ LeftParen[0:4]
 Identifier[0:5](a)
 RightParen[0:6]
 Semicolon[0:7]
+Identifier[1:0](b)
+Assignment[1:2-3]
+Identifier[1:5](a)
