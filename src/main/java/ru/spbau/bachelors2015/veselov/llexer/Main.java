@@ -21,6 +21,10 @@ public class Main {
             return;
         }
 
-        System.out.println(TokenUtils.getInstance().toString(tokens));
+        try {
+            System.out.println(TokenUtils.getInstance().toString(tokens));
+        } catch (UnableToTokenizeException e) {
+            System.out.println(e);
+        }
     }
 }

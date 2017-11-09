@@ -592,7 +592,7 @@ class JFLexer {
             }
           case 35: break;
           case 2: 
-            { throw new UnableToTokenizeException();
+            { throw new UnableToTokenizeException(yyline, yycolumn);
             }
           case 36: break;
           case 3: 

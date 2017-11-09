@@ -146,4 +146,4 @@ false { return keyWord(FALSE); }
 
 {Identifier} { return new Identifier(yyline, yycolumn, yytext().length(), yytext().toString()); }
 
-[^] { throw new UnableToTokenizeException(); }
+[^] { throw new UnableToTokenizeException(yyline, yycolumn); }
