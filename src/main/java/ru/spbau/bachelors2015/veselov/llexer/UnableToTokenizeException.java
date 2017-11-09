@@ -10,8 +10,11 @@ public class UnableToTokenizeException extends RuntimeException {
         this.vpos = vpos;
     }
 
-    public String toString() {
-        return "Unexpected symbol at " + Integer.toString(line) + ":" + Integer.toString(vpos);
+    public int getLine() {
+        return line;
     }
 
+    public int getVpos() {
+        return vpos;
+    }
 }

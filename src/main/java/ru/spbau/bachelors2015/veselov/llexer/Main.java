@@ -24,7 +24,9 @@ public class Main {
         try {
             System.out.println(TokenUtils.getInstance().toString(tokens));
         } catch (UnableToTokenizeException e) {
-            System.out.println(e);
+            System.out.println("Unexpected symbol at " +
+                               Integer.toString(e.getLine()) + ":" +
+                               Integer.toString(e.getVpos()));
         }
     }
 }
