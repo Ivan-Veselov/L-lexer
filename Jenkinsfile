@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('build') {
         steps {
-          bash 'mvn --version'
+          bash './gradlew jar'
         }
     }
   }
